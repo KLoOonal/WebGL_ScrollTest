@@ -8,6 +8,37 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>  
     <script src="Build/UnityLoader.js"></script>
+
+	<script>
+	
+	
+	
+		/* important! for alignment, you should make things
+		 * relative to the canvas' current width/height.
+		 */
+		 
+		
+		 
+		window.onresize = function(event) {
+				var ctx = document.getElementById('#canvas');
+				ctx.width  = window.innerWidth;
+				ctx.height = window.innerHeight;
+				//ctx.width  = document.body.clientWidth;
+				//ctx.height = document.body.clientHeight;
+				//console.log("Canvas width " + ctx.width);
+				//console.log("document.body.clientWidth " + document.body.clientWidth);
+				//console.log("window.innerWidth " + window.innerWidth);
+				//console.log("===================== ");
+			};
+      function onProgress(gameInstance, progress){
+		console.log('progress' + progress);
+		 if (progress == 1){
+			
+			
+		 }
+	  }
+    </script>
+
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/GL.json", {onProgress: UnityProgress});
     </script>
@@ -21,5 +52,10 @@
         <div class="title">WebGL_Test</div>
       </div>
     </div>
+
+
+
+
+
   </body>
 </html>
